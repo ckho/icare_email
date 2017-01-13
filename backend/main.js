@@ -8,7 +8,6 @@ var fs = require('fs');
 var _ = require('lodash');
 var app = express();
 var gm = require('gm').subClass({imageMagick: true});
-var config = require('../server-config.js');
 var extend = require('util')._extend;
 
 app.use(require('connect-livereload')({ ignore: [/^\/dl/] }));
@@ -68,10 +67,10 @@ app.get('/upload/', function(req, res) {
     }); 
 });
 
-app.use('/upload/', upload.fileHandler(uploadOptions));
+//app.use('/upload/', upload.fileHandler(uploadOptions));
 
 // imgProcessorBackend + "?src=" + encodeURIComponent(src) + "&method=" + encodeURIComponent(method) + "&params=" + encodeURIComponent(width + "," + height);
-app.get('/img/', function(req, res) {
+/*app.get('/img/', function(req, res) {
 
     var params = req.query.params.split(',');
 
@@ -111,38 +110,16 @@ app.get('/img/', function(req, res) {
 
     }
 
-});
+});*/
 
 app.post('/dl/', function(req, res) {
     var response = function(source) {
-        
         if (req.body.action == 'download') {
             res.setHeader('Content-disposition', 'attachment; filename=' + req.body.filename);
             res.setHeader('Content-type', 'text/html');
             res.write(source);
             res.end();
-        } else if (req.body.action == 'email') {
-            var nodemailer = require('nodemailer');
-            var transporter = nodemailer.createTransport(config.emailTransport);
-
-            var mailOptions = extend({
-                to: req.body.rcpt, // list of receivers
-                subject: req.body.subject, // Subject line
-                html: source // html body
-            }, config.emailOptions);
-
-            transporter.sendMail(mailOptions, function(error, info){
-                if (error) {
-                    console.log(error);
-                    res.status(500).send('Error: '+error);
-                    res.write('ERR');
-                } else {
-                    console.log('Message sent: ' + info.response);
-                    res.send('OK: '+info.response);
-                }
-            });
         }
-        
     };
 
     response(req.body.html);
@@ -151,7 +128,7 @@ app.post('/dl/', function(req, res) {
 
 // This is needed with grunt-express-server (while it was not needed with grunt-express)
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 2361;
 
 app.use(express.static(__dirname + '/../'));
 

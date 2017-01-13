@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for converter/declarations.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">converter/</a> declarations.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">91.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>158/173</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">86.61% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>110/127</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">91.98% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>149/162</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1175×</span>
+<span class="cline-any cline-yes">7657×</span>
+<span class="cline-any cline-yes">290×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">885×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1161×</span>
+<span class="cline-any cline-yes">596×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">999×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">992×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-yes">273×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">273×</span>
+<span class="cline-any cline-yes">273×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">363×</span>
+<span class="cline-any cline-yes">1211×</span>
+<span class="cline-any cline-yes">1210×</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1177×</span>
+<span class="cline-any cline-yes">1177×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">468×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">456×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">454×</span>
+<span class="cline-any cline-yes">454×</span>
+<span class="cline-any cline-yes">454×</span>
+<span class="cline-any cline-yes">175×</span>
+<span class="cline-any cline-yes">175×</span>
+<span class="cline-any cline-yes">175×</span>
+<span class="cline-any cline-yes">279×</span>
+<span class="cline-any cline-yes">276×</span>
+<span class="cline-any cline-yes">276×</span>
+<span class="cline-any cline-yes">276×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">454×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">452×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">452×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">452×</span>
+<span class="cline-any cline-yes">452×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">448×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">448×</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">448×</span>
+<span class="cline-any cline-yes">448×</span>
+<span class="cline-any cline-yes">448×</span>
+<span class="cline-any cline-yes">440×</span>
+<span class="cline-any cline-yes">440×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">447×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">444×</span>
+<span class="cline-any cline-yes">50×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">456×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">444×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">444×</span>
+<span class="cline-any cline-yes">397×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-yes">47×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">709×</span>
+<span class="cline-any cline-yes">709×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">709×</span>
+<span class="cline-any cline-yes">709×</span>
+<span class="cline-any cline-yes">709×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">709×</span>
+<span class="cline-any cline-yes">709×</span>
+<span class="cline-any cline-yes">296×</span>
+<span class="cline-any cline-yes">296×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">709×</span>
+<span class="cline-any cline-yes">261×</span>
+<span class="cline-any cline-yes">261×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">448×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">351×</span>
+<span class="cline-any cline-yes">244×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">244×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">244×</span>
+<span class="cline-any cline-yes">244×</span>
+<span class="cline-any cline-yes">244×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">351×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">346×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">404×</span>
+<span class="cline-any cline-yes">404×</span>
+<span class="cline-any cline-yes">572×</span>
+<span class="cline-any cline-yes">572×</span>
+<span class="cline-any cline-yes">417×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">404×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+&nbsp;
+// Parses CSS declarations and supports the property language (-ko-*) found between them.
+// Create KO bindings but doesn't depend on KO.
+// Needs a bindingProvider.
+&nbsp;
+var converterUtils = require("./utils.js");
+var cssParse = require("mensch/lib/parser.js");
+var console = require("console");
+var domutils = require("./domutils.js");
+&nbsp;
+var _declarationValueLookup = function(declarations, propertyname, templateUrlConverter) {
+  for (var i = declarations.length - 1; i &gt;= 0; i--) {
+    if (declarations[i].type == 'property' &amp;&amp; declarations[i].name == propertyname) {
+      return _declarationValueUrlPrefixer(declarations[i].value, templateUrlConverter);
+    }
+  }
+  return null;
+};
+&nbsp;
+var _propToCamelCase = function(propName) {
+  return propName.replace(/-([a-z])/g, function(match, contents, offset, s) {
+    return contents.toUpperCase();
+  });
+};
+&nbsp;
+var _declarationValueUrlPrefixer = function(value, templateUrlConverter) {
+  if (value.match(/url\(.*\)/)) {
+    var replaced = value.replace(/(url\()([^\)]*)(\))/g, function(matched, prefix, url, postfix) {
+      var trimmed = url.trim();
+      var apice = url.trim().charAt(0);
+      if (apice == '\'' || apice == '"') {
+        trimmed = trimmed.substr(1, trimmed.length - 2);
+      } else {
+        apice = '';
+      }
+      var newUrl = templateUrlConverter(trimmed);
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (newUrl !== null) {
+        return prefix + apice + newUrl + apice + postfix;
+      } else {
+<span class="cstat-no" title="statement not covered" >        return matched;</span>
+      }
+    });
+    return replaced;
+  } else {
+    return value;
+  }
+};
+&nbsp;
+var elaborateDeclarations = function(style, declarations, templateUrlConverter, bindingProvider, element, basicBindings, removeDisplayNone) {
+  var newBindings = typeof basicBindings == 'object' &amp;&amp; basicBindings !== null ? basicBindings : {};
+  var newStyle = null;
+  var skipLines = 0;
+  if (typeof declarations == 'undefined') {
+    var styleSheet = cssParse("#{\n" + style + "}", {
+      comments: true,
+      position: true
+    });
+    declarations = styleSheet.stylesheet.rules[0].declarations;
+    skipLines = 1;
+  }
+  for (var i = declarations.length - 1; i &gt;= 0; i--)
+    if (declarations[i].type == 'property') {
+      if (removeDisplayNone === true &amp;&amp; declarations[i].name == 'display' &amp;&amp; declarations[i].value == 'none') {
+        if (newStyle === null) newStyle = style;
+        newStyle = converterUtils.removeStyle(newStyle, declarations[i].position.start, declarations[i].position.end, skipLines, 0, 0, '');
+      } else {
+        var decl = declarations[i].name.match(/^-ko-(bind-|attr-)?([a-z0-9-]*?)(-if|-ifnot)?$/);
+        if (decl !== null) {
+          // rimozione dello stile -ko- dall'attributo style.
+          if (newStyle === null &amp;&amp; typeof style != 'undefined') newStyle = style;
+&nbsp;
+          var isAttr = decl[1] == 'attr-';
+          var isBind = decl[1] == 'bind-';
+          var propName = decl[2];
+&nbsp;
+          var isIf = decl[3] == '-if' || decl[3] == '-ifnot';
+          var condDecl;
+          var bindValue;
+          var propDefaultValue;
+&nbsp;
+          if (isIf) {
+            condDecl = declarations[i].name.substr(0, declarations[i].name.length - decl[3].length);
+            var conditionedDeclaration = _declarationValueLookup(declarations, condDecl, templateUrlConverter);
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (conditionedDeclaration === null) <span class="cstat-no" title="statement not covered" >throw "Unable to find declaration " + condDecl + " for " + declarations[i].name;</span>
+          } else {
+&nbsp;
+            if ((isAttr || isBind) &amp;&amp; (typeof element == 'undefined' &amp;&amp; typeof style != 'undefined')) throw "Attributes and bind declarations are only allowed in inline styles!";
+&nbsp;
+            var needDefaultValue = true;
+            var bindType;
+            if (isAttr) {
+              propDefaultValue = domutils.getAttribute(element, propName);
+              needDefaultValue = false;
+              bindType = 'virtualAttr';
+            } else if (!isBind) {
+              needDefaultValue = typeof style !== 'undefined';
+              if (needDefaultValue) propDefaultValue = _declarationValueLookup(declarations, propName, templateUrlConverter);
+              bindType = 'virtualStyle';
+            } else {
+              bindType = null;
+              <span class="missing-if-branch" title="else path not taken" >E</span>if (propName == 'text') {
+                if (typeof element !== 'undefined') {
+                  propDefaultValue = domutils.getInnerText(element);
+                } else {
+                  needDefaultValue = false;
+                }
+              } else <span class="cstat-no" title="statement not covered" >if (propName == 'html') {</span>
+<span class="cstat-no" title="statement not covered" >                if (typeof element !== 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >                  propDefaultValue = domutils.getInnerHtml(element);</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                  needDefaultValue = false;</span>
+                }
+              } else {
+<span class="cstat-no" title="statement not covered" >                needDefaultValue = false;</span>
+              }
+            }
+&nbsp;
+            if (needDefaultValue &amp;&amp; propDefaultValue === null) {
+              console.error("Cannot find default value for", declarations[i].name, declarations);
+              throw "Cannot find default value for " + declarations[i].name + ": " + declarations[i].value + " in " + element + " (" + typeof style + "/" + propName + ")";
+            }
+            var bindDefaultValue = propDefaultValue;
+&nbsp;
+            var bindName = _propToCamelCase(propName);
+&nbsp;
+            try {
+              bindValue = converterUtils.expressionBinding(declarations[i].value, bindingProvider, bindDefaultValue);
+            } catch (e) {
+              console.error("Model ensure path failed", e.stack, "name", declarations[i].name, "value", declarations[i].value, "default", propDefaultValue, "element", element);
+              throw e;
+            }
+&nbsp;
+            if (bindType !== null &amp;&amp; typeof newBindings[bindType] == 'undefined') newBindings[bindType] = {};
+&nbsp;
+&nbsp;
+            // Special handling for HREFs
+            if (bindType == 'virtualAttr' &amp;&amp; bindName == 'href') {
+              bindType = null;
+              bindName = 'wysiwygHref';
+              // We have to remove it, otherwise we ends up with 2 rules writing it.
+              <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof element != 'undefined' &amp;&amp; element !== null) {
+                domutils.removeAttribute(element, "href");
+              }
+            }
+&nbsp;
+            // TODO evaluate the use of "-then" (and -else) postfixes to complete the -if instead of relaying
+            // on the same basic sintax (or maybe it is better to support ternary operator COND ? THEN : ELSE).
+            var declarationCondition = _declarationValueLookup(declarations, declarations[i].name + '-if', templateUrlConverter);
+            var not = false;
+            if (declarationCondition === null) {
+              declarationCondition = _declarationValueLookup(declarations, declarations[i].name + '-ifnot', templateUrlConverter);
+              not = true;
+            } else {
+              if (_declarationValueLookup(declarations, declarations[i].name + '-ifnot', templateUrlConverter) !== null) {
+                throw "Unexpected error: cannot use both -if and -ifnot property conditions";
+              }
+            }
+            if (declarationCondition !== null) {
+              try {
+                var bindingCond = converterUtils.conditionBinding(declarationCondition, bindingProvider);
+                bindValue = (not ? '!' : '') + "(" + bindingCond + ") ? " + bindValue + " : null";
+              } catch (e) {
+                console.error("Unable to deal with -ko style binding condition", declarationCondition, declarations[i].name);
+                throw e;
+              }
+            }
+&nbsp;
+            if (bindType !== null) newBindings[bindType][bindName] = bindValue;
+            else newBindings[bindName] = bindValue;
+          }
+&nbsp;
+          // parsing @supports :preview
+          if (newStyle !== null) {
+&nbsp;
+            try {
+              // if "element" is defined then we are parsing an "inline" style and we want to remove it.
+              if (typeof element != 'undefined' &amp;&amp; element !== null) {
+                newStyle = converterUtils.removeStyle(newStyle, declarations[i].position.start, declarations[i].position.end, skipLines, 0, 0, '');
+              } else {
+                // otherwise we are parsing a full stylesheet.. let's rewrite the full "prop: value" without caring about the original syntax.
+                var replacedWith = '';
+                // if it is an "if" we simply have to remove it, otherwise we replace the input code with "prop: value" generating expression.
+                if (!isIf) replacedWith = propName + ': &lt;!-- ko text: ' + bindValue + ' --&gt;' + propDefaultValue + '&lt;!-- /ko --&gt;';
+                newStyle = converterUtils.removeStyle(newStyle, declarations[i].position.start, declarations[i].position.end, skipLines, 0, 0, replacedWith);
+              }
+            } catch (e) {
+<span class="cstat-no" title="statement not covered" >              console.warn("Remove style failed", e, "name", declarations[i]);</span>
+<span class="cstat-no" title="statement not covered" >              throw e;</span>
+            }
+&nbsp;
+          }
+&nbsp;
+        } else {
+          // prefixing urls
+          var replacedValue = _declarationValueUrlPrefixer(declarations[i].value, templateUrlConverter);
+          if (replacedValue != declarations[i].value) {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (newStyle === null &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >typeof style !== 'undefined')</span> <span class="cstat-no" title="statement not covered" >newStyle = style;</span>
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (newStyle !== null) {
+              try {
+                newStyle = converterUtils.removeStyle(newStyle, declarations[i].position.start, declarations[i].position.end, skipLines, 0, 0, declarations[i].name + ": " + replacedValue);
+              } catch (e) {
+<span class="cstat-no" title="statement not covered" >                console.log("Remove style failed replacing url", e, "name", declarations[i]);</span>
+<span class="cstat-no" title="statement not covered" >                throw e;</span>
+              }
+            }
+          }
+&nbsp;
+          // Style handling by concatenated "style attribute" (worse performance but more stable than direct style handling)
+          var bindName2 = _propToCamelCase(declarations[i].name);
+          var bind = 'virtualAttrStyle';
+          var bindVal2 = typeof newBindings['virtualStyle'] !== 'undefined' ? newBindings['virtualStyle'][bindName2] : undefined;
+&nbsp;
+          var dist = ' ';
+          if (typeof newBindings[bind] == 'undefined') {
+            newBindings[bind] = "''";
+            dist = '';
+          }
+&nbsp;
+          if (typeof bindVal2 !== 'undefined') {
+            newBindings[bind] = "'" + declarations[i].name + ": '+(" + bindVal2 + ")+';" + dist + "'+" + newBindings[bind];
+            delete newBindings['virtualStyle'][bindName2];
+          } else {
+            newBindings[bind] = "'" + declarations[i].name + ": " + converterUtils.addSlashes(replacedValue) + ";" + dist + "'+" + newBindings[bind];
+          }
+&nbsp;
+        }
+      }
+    }
+&nbsp;
+  if (typeof element != 'undefined' &amp;&amp; element !== null) {
+    for (var prop in newBindings['virtualStyle'])
+<span class="cstat-no" title="statement not covered" >      if (newBindings['virtualStyle'].hasOwnProperty(prop)) {</span>
+<span class="cstat-no" title="statement not covered" >        console.log("Unexpected virtualStyle binding after conversion to virtualAttr.style", prop, newBindings['virtualStyle'][prop], style);</span>
+<span class="cstat-no" title="statement not covered" >        throw "Unexpected virtualStyle binding after conversion to virtualAttr.style for " + prop;</span>
+      }
+    delete newBindings['virtualStyle'];
+&nbsp;
+    var currentBindings = domutils.getAttribute(element, 'data-bind');
+    var dataBind = (currentBindings !== null ? <span class="branch-0 cbranch-no" title="branch not covered" >currentBindings + ", " </span>: "") + _bindingSerializer(newBindings);
+    domutils.setAttribute(element, 'data-bind', dataBind);
+  }
+&nbsp;
+  // TODO a function whose return type depends on the input parameters is very ugly.. please FIX ME.
+  if (typeof style == 'undefined') {
+    // clean virtualStyle if empty
+    var hasVirtualStyle = false;
+    for (var prop1 in newBindings['virtualStyle'])
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (newBindings['virtualStyle'].hasOwnProperty(prop1)) {
+        hasVirtualStyle = true;
+        break;
+      }
+    if (!hasVirtualStyle) delete newBindings['virtualStyle'];
+    else {
+      // remove and add back virtualAttrStyle so it gets appended BEFORE virtualAttrStyle (_bindingSerializer reverse them...)
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (typeof newBindings['virtualAttrStyle'] !== 'undefined') {
+        var vs = newBindings['virtualAttrStyle'];
+        delete newBindings['virtualAttrStyle'];
+        newBindings['virtualAttrStyle'] = vs;
+      }
+    }
+    // returns new serialized bindings
+    return _bindingSerializer(newBindings);
+  }
+&nbsp;
+  return newStyle;
+};
+&nbsp;
+var _bindingSerializer = function(val) {
+  var res = [];
+  for (var prop in val)
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (val.hasOwnProperty(prop)) {
+      if (typeof val[prop] == 'object') res.push(prop + ": " + "{ " + _bindingSerializer(val[prop]) + " }");
+      else res.push(prop + ": " + val[prop]);
+    }
+  return res.reverse().join(', ');
+};
+&nbsp;
+module.exports = elaborateDeclarations;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jan 03 2017 21:33:46 GMT+0800 (HKT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
